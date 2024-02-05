@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Be My Valentine, Ashley?</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: pink;
+            text-align: center;
+            padding: 50px;
+        }
+        h1 {
+            color: red;
+        }
+        button {
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 12px;
+        }
+        .yes-button {
+            background-color: #4CAF50; /* Green */
+        }
+        .no-button {
+            background-color: #f44336; /* Red */
+        }
+        .heart {
+            display: none;
+            font-size: 48px;
+            color: #ff1493;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Ashley, will you be my Valentine?</h1>
+
+<button class="yes-button" onclick="showHeart()">Yes 😊</button>
+<button class="no-button" id="noButton" onclick="moveButton()">No 🙁</button>
+
+<div id="heart" class="heart">💖</div>
+
+<script>
+    function showHeart() {
+        document.getElementById('heart').style.display = 'block';
+    }
+
+    function moveButton() {
+        const noButton = document.getElementById('noButton');
+        const newX = Math.random() * (window.innerWidth - noButton.clientWidth);
+        const newY = Math.random() * (window.innerHeight - noButton.clientHeight);
+        noButton.style.position = 'absolute';
+        noButton.style.left = `${newX}px`;
+        noButton.style.top = `${newY}px`;
+    }
+</script>
+
+</body>
+</html>
